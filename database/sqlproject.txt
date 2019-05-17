@@ -1,0 +1,72 @@
+CREATE TABLE `tagalog`.`Business` (
+  `idBusiness` INT NOT NULL,
+  `businessname` VARCHAR(45) NULL,
+  `businessLoc` VARCHAR(45) NULL,
+  `businessPhone` VARCHAR(45) NULL,
+  `businessAddress` VARCHAR(45) NULL,
+  `contactName` VARCHAR(45) NULL,
+  `beenApproved` ENUM('Yes', 'No') NULL,
+  PRIMARY KEY (`idBusiness`));
+CREATE TABLE `tagalog`.`Presentation` (
+  `idPresentation` INT NOT NULL,
+  `presentationName` VARCHAR(45) NULL,
+  `presentationDate` VARCHAR(45) NULL,
+  `presentationTime` VARCHAR(45) NULL,
+  `promotional` VARCHAR(45) NULL,
+  `description` VARCHAR(45) NULL,
+  `URL` VARCHAR(45) NULL,
+  PRIMARY KEY (`idPresentation`));
+  CREATE TABLE `tagalog`.`Presenter` (
+  `idPresenter` INT NOT NULL,
+  `jobTitle` VARCHAR(45) NULL,
+  `timeWithCompany` VARCHAR(45) NULL,
+  `CnuAlumni` ENUM('Yes', 'No') NULL,
+  `AlumniYear` VARCHAR(45) NULL,
+  `AlumniMajor` VARCHAR(45) NULL,
+  PRIMARY KEY (`idPresenter`));
+  CREATE TABLE `tagalog`.`User` (
+  `idUser` INT NOT NULL,
+  `firstName` VARCHAR(45) NULL,
+  `lastName` VARCHAR(45) NULL,
+  `Type` ENUM('Student', 'Presenter', 'Admin') NULL,
+  `emailAddres` VARCHAR(45) NULL,
+  `username` VARCHAR(45) NULL,
+  `password` VARCHAR(45) NULL,
+  PRIMARY KEY (`idUser`));
+  CREATE TABLE `tagalog`.`Student` (
+  `idStudent` INT NOT NULL,
+  `year` VARCHAR(45) NULL,
+  `major` VARCHAR(45) NULL,
+  PRIMARY KEY (`idStudent`));
+  CREATE TABLE `tagalog`.`Attendance` (
+  `idAttendance` INT NOT NULL,
+  `idPresentation` INT NULL,
+  `idStudent` INT NULL,
+  `attended` ENUM('Yes', 'No') NULL,
+  PRIMARY KEY (`idAttendance`),
+  INDEX `idPresentation_idx` (`idPresentation` ASC),
+  INDEX `idStudent_idx` (`idStudent` ASC),
+  CONSTRAINT `idPresentation`
+    FOREIGN KEY (`idPresentation`)
+    REFERENCES `tagalog`.`Presentation` (`idPresentation`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `idStudent`
+    FOREIGN KEY (`idStudent`)
+    REFERENCES `tagalog`.`Student` (`idStudent`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
+	ALTER TABLE `tagalog`.`Presenter` 
+ADD CONSTRAINT `idBusiness`
+  FOREIGN KEY (`idBusiness`)
+  REFERENCES `tagalog`.`Business` (`idBusiness`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE,
+ADD CONSTRAINT `presentation`
+  FOREIGN KEY (`idPresentation`)
+  REFERENCES `tagalog`.`Presentation` (`idPresentation`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE;
+  
+
+  

@@ -1,0 +1,16 @@
+1. Ubuntu 16.04 
+2. ec2-52-21-71-199.compute-1.amazonaws.com
+3. 52.21.71.199
+4. windows if using putty 
+Step number one: Open putty and insert the public ip address that is listed on the ec2 instance
+Step number two: Make sure the SSH option is selected and the port is 22
+Step number three: Install puttyGen and use this to convert the private key file made on amazon web services to the proper file type .ppk 
+Step number four: Add the key into putty under the auth menu on the left and start your connection 
+Step number five: enter Ubuntu into the commmand line when it asks for username. 
+
+Mac steps
+Step number one: open the terminal on your mac 
+Step number two: type ssh root@IPaddress and insert your IP address
+Step number three: make sure your private key is saved on your computer
+Step number four: use this ssh -i /path/my-key-pair.pem ec2-user@public_dns_name to connect to the instance
+Step number five: username for instance is ubuntu no pw

@@ -1,0 +1,14 @@
+Part 1 (5%) Implementation – Database Connectivity
+we attempt 0% of connectivity
+
+Part 2 (10%) Implementation – User Interface 
+we attempt 70% of Part 1 Grade - Complete all prior steps, as well as ensure 
+that user interfaces are created and functional for at least 5 use cases 
+
+Part 3 (5%) – Database Test Data 
+we attempt 100% of Part 3 Grade – 10+ test records per table in database 
+
+Part 4 (5%) – Deployment
+we attempt 100% of part 5 grade – use git clone to clone your repo to your 
+deployment machine, and use symbolic links (or updated web server configuration)
+to reference the web directory 

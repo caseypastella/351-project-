@@ -1,0 +1,8 @@
+1. mydb.ca3i1jxgi2un.us-east-1.rds.amazonaws.com
+2. tagalog 
+tagalog123
+3. Step number one: Open mysql workbench and start a new connection. 
+Step number two: Enter a name for your connection and enter the endpoint from the rds instance
+Step number three: Enter the port that is shown on your rds instance
+Step number four: Enter the username that was created and also save your password in the vault for easy connecting
+Step number five: Connect to the server and make sure your security groups on the rds instance allow for mmysql connections from anywhere

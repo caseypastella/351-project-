@@ -1,0 +1,7 @@
+info for connecting
+Username: tagalog
+Password: tagalog123
+
+info for user
+username: web_app_user
+password: Tagalog@123
